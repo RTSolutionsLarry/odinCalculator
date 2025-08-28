@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.calculatorContainer {
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 70vh;
+    border: solid black 1px;
+}
+
+.displayContainer {
+    height: 20%;
+    border: solid green 1px;
+}
+
+.inputsContainer {
+    height: 80%;
+}
