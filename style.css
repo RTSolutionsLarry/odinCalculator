@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     border: 0;
+    font-size: large;
 }
 
 body {
@@ -21,9 +22,22 @@ body {
 
 .displayContainer {
     height: 20%;
-    border: solid green 1px;
+    border-bottom: solid black 1px;
 }
 
 .inputsContainer {
     height: 80%;
+ }
+
+.inputRow {
+    display: flex;
+    justify-content: space-evenly;
+    height: 20%;
+}
+
+.input {
+    border: solid black 1px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 10px
 }
