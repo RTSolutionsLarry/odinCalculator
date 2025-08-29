@@ -1,6 +1,5 @@
 const inputs = Array.from(document.getElementsByClassName('input'));
 const buttons = [];
-const inputsToOperateOn = [];
 
 const createInputObjects = (inputs) => {
     for (input of inputs) {
@@ -18,7 +17,7 @@ const buttonPress = (textContent,columnNumber) => {
     if (textContent == 'C') {
         clear();
     } else if (textContent == '=') {
-        operate();
+        operate(columnNumber);
     } else {
         displayText(textContent,columnNumber);
     }
@@ -33,12 +32,26 @@ const displayText = (textContent,columnNumber) => {
     }
 }
 
-const operate = (listOfButtonsPressed) => {
-    console.log('Inside operate function');
+const operate = (columnNumber) => {
+    if (columnNumber != 4) {
+        const textArray = document.querySelector('.display').textContent.split(' ');
+        const answer = parseInt(textArray);
+        console.log(answer);
+        let x = 0;
+        for (text of textArray) {
+            if (x % 2 == 0) {
+            } else {
+                text = parseInt(text);
+            }
+            x++;
+        }
+        console.log(textArray);
+
+    }
+
 }
 
 const clear = () => {
-    console.log('Inside clear function');
     const text = document.querySelector('.display');
     text.textContent = '';
 }
@@ -139,7 +152,6 @@ const buttonSetup = () => {
             button.classList.add('input');
             addButtonDetails(button, x, y);
             button.addEventListener('click',(e)=> {
-                console.log(x);
                 buttonPress(e.target.textContent,x);
             });
             divRow.appendChild(button); 
