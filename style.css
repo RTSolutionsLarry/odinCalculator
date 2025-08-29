@@ -9,15 +9,18 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: aliceblue;
 }
 
 .calculatorContainer {
-    margin: 10vh auto;
+    margin: 20vh auto;
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 70vh;
+    height: 50vh;
     border: solid black 1px;
+    background-color: black;
+    width: 300px;
 }
 
 .displayContainer {
@@ -40,4 +43,8 @@ body {
     aspect-ratio: 1;
     border-radius: 50%;
     margin: 10px
+}
+
+.lightGray {
+    background-color: gray;
 }
