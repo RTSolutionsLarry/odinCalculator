@@ -37,7 +37,11 @@ body {
     height: 100%;
     padding-bottom: 5px;
     padding-right: 15px;
+    padding-left: 15px;
     font-size: xx-large;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .inputsContainer {

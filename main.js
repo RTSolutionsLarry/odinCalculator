@@ -27,10 +27,10 @@ const buttonPress = (textContent,columnNumber) => {
 const displayText = (textContent,columnNumber) => {
     const text = document.querySelector('.display');
     if (columnNumber == 4) {
-        console.log('column 4')
+        text.textContent = `${text.textContent} ${textContent} `;
+    } else {
+        text.textContent = `${text.textContent}${textContent}`;
     }
-
-    text.textContent = `${text.textContent} ${textContent}`;
 }
 
 const operate = (listOfButtonsPressed) => {
