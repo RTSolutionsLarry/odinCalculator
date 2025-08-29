@@ -30,6 +30,16 @@ body {
     border-bottom: solid #494949 1px;
 }
 
+.display {
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 100%;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    font-size: xx-large;
+}
+
 .inputsContainer {
     height: 80%;
     display: flex;
@@ -50,6 +60,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .gray {

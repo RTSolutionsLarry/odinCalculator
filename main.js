@@ -14,16 +14,33 @@ const createInputObjects = (inputs) => {
     }
 }
 
-const buttonPress = (textContent) => {
-    console.log(`In buttonPress function: ${textContent}`);
+const buttonPress = (textContent,columnNumber) => {
+    if (textContent == 'C') {
+        clear();
+    } else if (textContent == '=') {
+        operate();
+    } else {
+        displayText(textContent,columnNumber);
+    }
+}
+
+const displayText = (textContent,columnNumber) => {
+    const text = document.querySelector('.display');
+    if (columnNumber == 4) {
+        console.log('column 4')
+    }
+
+    text.textContent = `${text.textContent} ${textContent}`;
 }
 
 const operate = (listOfButtonsPressed) => {
-    //console.log('Inside operate function');
+    console.log('Inside operate function');
 }
 
 const clear = () => {
-    //console.log('Inside clear function');
+    console.log('Inside clear function');
+    const text = document.querySelector('.display');
+    text.textContent = '';
 }
 
 const addButtonDetails = (button, x, y) => {
@@ -122,7 +139,8 @@ const buttonSetup = () => {
             button.classList.add('input');
             addButtonDetails(button, x, y);
             button.addEventListener('click',(e)=> {
-                buttonPress(e.target.textContent);
+                console.log(x);
+                buttonPress(e.target.textContent,x);
             });
             divRow.appendChild(button); 
         }
