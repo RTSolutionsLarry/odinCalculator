@@ -121,6 +121,9 @@ const buttonSetup = () => {
             const button = document.createElement('div');
             button.classList.add('input');
             addButtonDetails(button, x, y);
+            button.addEventListener('click',(e)=> {
+                buttonPress(e.target.textContent);
+            });
             divRow.appendChild(button); 
         }
     }
