@@ -4,6 +4,7 @@
     padding: 0;
     border: 0;
     font-size: large;
+    color: white;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 
 .displayContainer {
     height: 20%;
-    border-bottom: solid black 1px;
+    border-bottom: solid #494949 1px;
 }
 
 .inputsContainer {
@@ -45,6 +46,19 @@ body {
     margin: 10px
 }
 
+.gray {
+    background-color:  #494949;
+}
+
 .lightGray {
     background-color: gray;
+    color: black;
+}
+
+.darkGray {
+    background-color: #343434;
+}
+
+.green {
+    background-color: #08C985;
 }
