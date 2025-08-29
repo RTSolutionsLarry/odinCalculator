@@ -1,0 +1,4 @@
+Create a function on the Equals button called Operate
+Make each button an object that checks the type of button clicked
+Button types include number, operand
+Operate function will take in an array of numbers and operands
