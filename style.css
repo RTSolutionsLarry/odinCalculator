@@ -22,6 +22,7 @@ body {
     border: solid black 1px;
     background-color: black;
     width: 300px;
+    box-shadow: 5px 5px 15px 5px #000000;
 }
 
 .displayContainer {
