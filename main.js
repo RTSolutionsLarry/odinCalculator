@@ -118,7 +118,7 @@ const buttonSetup = () => {
         divRow.classList = 'inputRow';
         inputsContainer.appendChild(divRow);
         for (let x = 1; x < 5; x++) {
-            const button = document.createElement('button');
+            const button = document.createElement('div');
             button.classList.add('input');
             addButtonDetails(button, x, y);
             divRow.appendChild(button); 
