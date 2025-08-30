@@ -1,5 +1,6 @@
 const inputs = Array.from(document.getElementsByClassName('input'));
 const buttons = [];
+let clearIt = false;
 
 const createInputObjects = (inputs) => {
     for (input of inputs) {
@@ -14,6 +15,12 @@ const createInputObjects = (inputs) => {
 }
 
 const buttonPress = (textContent,columnNumber) => {
+        if (clearIt) {
+            clear();
+        clearIt = false;
+    }
+
+
     const textArray = document.querySelector('.display').textContent.split(' ');
     if (textArray[2] && columnNumber == 4) {
         operate(columnNumber);
@@ -22,23 +29,22 @@ const buttonPress = (textContent,columnNumber) => {
         clear();
     } else if (textContent == '=') {
         operate(columnNumber);
+        clearIt = true;
     } else {
         displayText(textContent,columnNumber);
     }
+    console.log(`ClearIt: ${clearIt}`);
 }
 
 const displayText = (textContent,columnNumber) => {
     if (textContent != '=') {
         const text = document.querySelector('.display');
-        console.log(text);
         if (columnNumber == 4) {
             text.textContent = `${text.textContent} ${textContent} `;
         } else {
             text.textContent = `${text.textContent}${textContent}`;
         }
     } 
-
-
 }
 
 const operate = (columnNumber) => {
