@@ -34,7 +34,11 @@ const displayText = (textContent,columnNumber) => {
 
 const operate = (columnNumber) => {
     if (columnNumber != 4) {
+        const lext = document.querySelector('.display').textContent;
         const textArray = document.querySelector('.display').textContent.split(' ');
+        console.log(lext);
+        console.log(textArray);
+
         const answer = parseInt(textArray);
         console.log(answer);
         let x = 0;
