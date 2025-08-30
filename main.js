@@ -15,7 +15,7 @@ const createInputObjects = (inputs) => {
 
 const buttonPress = (textContent,columnNumber) => {
     const textArray = document.querySelector('.display').textContent.split(' ');
-    if (textArray[2]) {
+    if (textArray[2] && columnNumber == 4) {
         operate(columnNumber);
         displayText(textContent,columnNumber);
     } else if (textContent == 'C') {
