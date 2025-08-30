@@ -14,7 +14,11 @@ const createInputObjects = (inputs) => {
 }
 
 const buttonPress = (textContent,columnNumber) => {
-    if (textContent == 'C') {
+    const textArray = document.querySelector('.display').textContent.split(' ');
+    if (textArray[2]) {
+        operate(columnNumber);
+        displayText(textContent,columnNumber);
+    } else if (textContent == 'C') {
         clear();
     } else if (textContent == '=') {
         operate(columnNumber);
@@ -24,36 +28,38 @@ const buttonPress = (textContent,columnNumber) => {
 }
 
 const displayText = (textContent,columnNumber) => {
-    const text = document.querySelector('.display');
-    if (columnNumber == 4) {
-        text.textContent = `${text.textContent} ${textContent} `;
-    } else {
-        text.textContent = `${text.textContent}${textContent}`;
+    if (textContent != '=') {
+        const text = document.querySelector('.display');
+        if (columnNumber == 4) {
+            text.textContent = `${text.textContent} ${textContent} `;
+        } else {
+            text.textContent = `${text.textContent}${textContent}`;
+        }
     }
+
+
 }
 
 const operate = (columnNumber) => {
-    if (columnNumber != 4) {
-        const lext = document.querySelector('.display').textContent;
         const textArray = document.querySelector('.display').textContent.split(' ');
-        console.log(lext);
-        console.log(textArray);
 
-        const answer = parseInt(textArray);
-        console.log(answer);
-        let x = 0;
-        for (text of textArray) {
-            if (x % 2 == 0) {
-            } else {
-                text = parseInt(text);
+        const answer = (textArray) => {
+            switch (textArray[1]) {
+                case '+':
+                    return parseInt(textArray[0]) + parseInt(textArray[2]);
+                case '-':
+                    return parseInt(textArray[0]) - parseInt(textArray[2]);
+                case '*':
+                    return parseInt(textArray[0]) * parseInt(textArray[2]);
+                case '/':
+                    return parseInt(textArray[0]) / parseInt(textArray[2]);                                                
             }
-            x++;
         }
-        console.log(textArray);
-
+        const text = document.querySelector('.display');
+        text.textContent = answer(textArray);
     }
 
-}
+
 
 const clear = () => {
     const text = document.querySelector('.display');
