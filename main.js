@@ -30,33 +30,39 @@ const buttonPress = (textContent,columnNumber) => {
 const displayText = (textContent,columnNumber) => {
     if (textContent != '=') {
         const text = document.querySelector('.display');
+        console.log(text);
         if (columnNumber == 4) {
             text.textContent = `${text.textContent} ${textContent} `;
         } else {
             text.textContent = `${text.textContent}${textContent}`;
         }
-    }
+    } 
 
 
 }
 
 const operate = (columnNumber) => {
         const textArray = document.querySelector('.display').textContent.split(' ');
+        if (textArray[2] == 0 && textArray[1] == '/') {
+            const text = document.querySelector('.display');
+            text.textContent = '...really?';
+        } else {
 
-        const answer = (textArray) => {
-            switch (textArray[1]) {
-                case '+':
-                    return parseInt(textArray[0]) + parseInt(textArray[2]);
-                case '-':
-                    return parseInt(textArray[0]) - parseInt(textArray[2]);
-                case '*':
-                    return parseInt(textArray[0]) * parseInt(textArray[2]);
-                case '/':
-                    return parseInt(textArray[0]) / parseInt(textArray[2]);                                                
+            const answer = (textArray) => {
+                switch (textArray[1]) {
+                    case '+':
+                        return parseInt(textArray[0]) + parseInt(textArray[2]);
+                    case '-':
+                        return parseInt(textArray[0]) - parseInt(textArray[2]);
+                    case '*':
+                        return parseInt(textArray[0]) * parseInt(textArray[2]);
+                    case '/':
+                        return parseInt(textArray[0]) / parseInt(textArray[2]);                                                
+                }
             }
+            const text = document.querySelector('.display');
+            text.textContent = answer(textArray);
         }
-        const text = document.querySelector('.display');
-        text.textContent = answer(textArray);
     }
 
 
